@@ -17,8 +17,9 @@ export class Filter extends BaseFilter<Params> {
 
     for (const item of args.items) {
       const kind = item.kind ?? "";
+      const label = labels[kind] ?? item.kind;
 
-      item.kind = labels[kind] ?? item.kind;
+      item.kind = label;
 
       const hl_group = hlGroups[kind];
       if (!hl_group) {
@@ -35,7 +36,7 @@ export class Filter extends BaseFilter<Params> {
           type: "kind",
           hl_group,
           col: 1,
-          width: byteLength(kind),
+          width: byteLength(label ?? ""),
         },
       ];
     }
