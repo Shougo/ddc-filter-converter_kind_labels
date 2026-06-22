@@ -17,10 +17,12 @@ export class Filter extends BaseFilter<Params> {
 
     for (const item of args.items) {
       const kind = item.kind ?? "";
-      const label = labels[kind] ?? item.kind;
-      const displayKind = label ?? "";
+      const label = labels[kind];
+      const displayKind = label ?? kind;
 
-      item.kind = label;
+      if (label !== undefined) {
+        item.kind = label;
+      }
 
       const hl_group = hlGroups[kind];
       if (!hl_group) {
