@@ -21,3 +21,6 @@ call ddc#custom#patch_global('sourceOptions', #{
       \  }
       \})
 ```
+
+`kindLabels` changes the displayed kind label, and `kindHlGroups` highlights
+that displayed label using its converted width.
