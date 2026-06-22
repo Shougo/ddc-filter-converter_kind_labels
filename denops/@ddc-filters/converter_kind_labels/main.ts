@@ -20,9 +20,7 @@ export class Filter extends BaseFilter<Params> {
       const label = labels[kind];
       const displayKind = label ?? kind;
 
-      if (label !== undefined) {
-        item.kind = label;
-      }
+      item.kind = label ?? item.kind;
 
       const hl_group = hlGroups[kind];
       if (!hl_group) {
