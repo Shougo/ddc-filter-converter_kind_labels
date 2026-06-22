@@ -36,7 +36,7 @@ export class Filter extends BaseFilter<Params> {
           type: "kind",
           hl_group,
           col: 1,
-          width: byteLength(label ?? ""),
+          width: byteLength(item.kind ?? ""),
         },
       ];
     }
